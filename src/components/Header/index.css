@@ -1,0 +1,159 @@
+/* Default styles (for desktop and larger screens) */
+@import url('https://fonts.googleapis.com/css2?family=Averia+Gruesa+Libre&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Averia+Gruesa+Libre&family=Langar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=SUSE:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&display=swap');
+
+.icons-container {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+.icon-logo {
+    height: 35px;
+}
+
+.navbar {
+    background-color: white;
+    box-shadow: 0px 0px 5px lightgray;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    padding-left: 25px;
+}
+
+.items-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    list-style: none;
+    padding: 0;
+    font-family: "SUSE", sans-serif;
+    font-optical-sizing: auto;
+
+    color: rgb(36, 34, 34);
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 17px;
+}
+
+
+.mob-btn {
+    display: none;
+}
+.sys-btn{
+    display: block;
+    margin-right: 20px;
+}
+
+.sys-res-btn {
+    background-color: blue;
+    font-size: 12px;
+    height: 34px;
+    width: 100px;
+    border-radius: 8px;
+    font-weight: bold;
+    border: solid;
+    border-width: 0px;
+    color: white;
+}
+.sys-res-btn:hover {
+    background-color: yellow;
+    box-shadow: 0 0 20px yellow;
+    color: black;
+}
+
+.sys-res-btn:active {
+    background-color: orange;
+    box-shadow: 0 0 20px orange;
+    color: black;
+}
+
+/* Mobile view (screen width 768px and below) */
+@media screen and (max-width: 768px) {
+    .icons-container {
+        flex-direction: row; 
+        gap: 10px; 
+        justify-content: center;
+        align-items: center;
+    }
+
+    .icon-logo {
+        height: 30px; 
+    }
+
+    .navbar {
+        height: auto; 
+        flex-direction: row;
+        padding: 10px; 
+        justify-content: space-between; 
+    }
+
+    .items-list {
+        overflow: hidden;  /* Hides items while collapsed */
+        flex-direction: column;
+        position: absolute;
+        top: 40px;
+        right: 0;
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        text-align: center;
+        max-height: 0;   /* Collapsed height */
+        transition: max-height 0.4s ease-in-out; /* Smooth transition for height */
+        gap: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .items-list li {
+        padding: 3px;
+        border-bottom: 1px solid #eee;
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+ 
+
+    .sys-btn {
+        display: none;
+    }
+    .mob-btn{
+        display: block;
+    }
+
+    /* When navbar is open, set max-height to allow dropdown expansion */
+    .navbar.open .items-list {
+        max-height: 300px;  /* Adjust this to the height of your dropdown list */
+    }
+
+    .hamburger-menu {
+        display: block; /* Show the hamburger icon */
+        cursor: pointer;
+        margin-right: 20px;
+    }
+
+    .hamburger-menu div {
+        width: 25px;
+        height: 3px;
+        background-color: gray;
+        margin: 5px 0;
+    }
+
+    .drop-down {
+        font-size: 21px;
+        color: #0546ad;
+    }
+}

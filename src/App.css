@@ -6,6 +6,11 @@
   height: 40vmin;
   pointer-events: none;
 }
+.full-bg{
+  background-image: url("https://res.cloudinary.com/dx97khgxd/image/upload/v1715927029/geometric-abstract-background-with-connected-dots-lines_1409-1866_z3ghpi.avif");
+  background-size: cover;
+  min-height: 100vh;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
