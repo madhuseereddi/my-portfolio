@@ -14,7 +14,7 @@ const DbServer = async () => {
     const db = await open({
       filename: dbPath,
       driver: sqlite3.Database,
-    });
+    })
 
     app.listen(process.env.PORT, () => {
       console.log(`Server connected at: http://localhost:${process.env.PORT}`);
